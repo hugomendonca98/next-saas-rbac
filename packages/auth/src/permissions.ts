@@ -13,9 +13,10 @@ export const permissions: Record<role, PermissionByRole> = {
   ADMIN: (_, builder) => {
     builder.can('manage', 'all')
   },
-  MEMBER: (_, builder) => {
+  MEMBER: (user, builder) => {
     // builder.can('invite', 'User')
-    builder.can('manage', 'Project')
+    builder.can(['manage', 'get'], 'Project')
+    builder.can(['update', 'delete'], 'Project', { ownerId: { $eq: user.id } })
   },
   BELLING: () => {},
 }
