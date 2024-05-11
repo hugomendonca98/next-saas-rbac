@@ -7,15 +7,16 @@
     "lint": "turbo lint"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "turbo": "latest"
   },
   "engines": {
     "node": ">=18"
   },
   "packageManager": "npm@10.2.3",
-    "workspaces": [
-      "apps/*",
-      "config/*",
-      "packages/*"
-    ]
+  "workspaces": [
+    "apps/*",
+    "config/*",
+    "packages/*"
+  ]
 }
