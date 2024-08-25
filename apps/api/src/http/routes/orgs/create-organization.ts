@@ -38,7 +38,7 @@ export async function createOrganization(app: FastifyInstance) {
             where: { domain },
           })
 
-          if (!organizationByDomain) {
+          if (organizationByDomain) {
             throw new Error('An organization with this domain already exists')
           }
         }
